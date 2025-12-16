@@ -52,6 +52,8 @@ app.all('/api/feed', async (req, res) => {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 // ***************************************
                 'Content-Type': 'application/json',
+                // Add the Host header to prevent Vercel-specific routing issues
+                'Host': 'script.google.com'
             },
         };
         // ... rest of the proxy logic remains the same
@@ -81,6 +83,7 @@ app.all('/api/feed', async (req, res) => {
 });
 
 module.exports = app;
+
 
 
 
