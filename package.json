@@ -1,0 +1,13 @@
+{
+  "name": "shadow-cats-feed-proxy",
+  "version": "1.0.0",
+  "description": "Proxy for Shadow Cats Google Apps Script API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7" 
+  }
+}
