@@ -46,14 +46,15 @@ app.all('/api/feed', async (req, res) => {
     try {
         let fetchOptions = {
             method: req.method,
-            // Ensure no cookies/credentials are passed from the client to the GAS endpoint
             credentials: 'omit', 
             headers: {
+                // *** CRITICAL CHANGE: MIMIC A BROWSER ***
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                // ***************************************
                 'Content-Type': 'application/json',
-                // Keep the host header minimal
-                'User-Agent': 'ShadowCatProxy/1.0',
             },
         };
+        // ... rest of the proxy logic remains the same
 
         if (req.method === 'POST' && req.body) {
             fetchOptions.body = JSON.stringify(req.body);
@@ -80,4 +81,5 @@ app.all('/api/feed', async (req, res) => {
 });
 
 module.exports = app;
+
 
