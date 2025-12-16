@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // --- CRITICAL: REPLACE THIS WITH YOUR DEPLOYED GOOGLE APPS SCRIPT URL ---
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbyChNzI09HEZ9rwvgS7XB98B8kvoE27XqeStWsVMrW7lekupQnsKp7QS6FYwa7SXWzuLA/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbxcMPoZvuyVLnB4dZGnQ5clbR6sKJPtWEeUM7JdE1sM4Nd372Df_LAWlJG_KAOuj5A1/exec';
 // -------------------------------------------------------------------------
 
 
@@ -80,3 +80,4 @@ app.all('/api/feed', async (req, res) => {
 });
 
 module.exports = app;
+
